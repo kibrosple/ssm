@@ -1,6 +1,9 @@
 package com.itheima.domain;
 
+import com.itheima.utils.DateUtils;
+
 import java.io.Serializable;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -49,6 +52,7 @@ public class Product implements Serializable{
     }
 
     public Date getDepartureTime() {
+
         return departureTime;
     }
 
@@ -58,9 +62,10 @@ public class Product implements Serializable{
 
     public String getDepartureTimeStr() {
         if(departureTime!=null){
-            departureTimeStr=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(departureTime);
+            departureTimeStr= DateUtils.date2String(departureTime,"yyyy-MM-dd HH:mm");
         }
         return departureTimeStr;
+
     }
 
     public void setDepartureTimeStr(String departureTimeStr) {

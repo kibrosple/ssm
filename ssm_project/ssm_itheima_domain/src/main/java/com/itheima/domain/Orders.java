@@ -22,6 +22,8 @@ public class Orders {
     private String payTypeStr;
     private String orderDesc;
 
+
+
     public String getOrderStatusStr() {
         //订单状态(0 未支付 1 已支付)
         if(orderStatus==0){
